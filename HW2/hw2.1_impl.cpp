@@ -8,8 +8,8 @@ std::complex<double> MyPotential::eval(const std::complex<double> r)
   std::complex<double> r4 = r2*r2;
   std::complex<double> r6 = r4*r2;
   std::complex<double> one = 1;
-  std::complex<double> y = (r6-one)/r6/r6;
-  return y*y;
+  std::complex<double> y = (r4-one)/r6;
+  return y;
 }
 
 std::complex<double> MyCosine::eval(const std::complex<double> r)
