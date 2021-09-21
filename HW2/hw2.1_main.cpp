@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 {
   MyPotential mypotential;
   MyCosine mycosine;
-  const double x = std::stod(argv[1]);
+  const double x = 1.54;
   const double dfdr = firstDerivative(mypotential, x);
   printf("derivative: %1.17e at: %1.17e\n", dfdr, x);
   const double dfdrc = firstDerivative(mycosine, M_PI/2);
