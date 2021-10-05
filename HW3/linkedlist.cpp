@@ -205,6 +205,7 @@ int main(int argc, char *argv[])
   }
 
   unsigned int finished = 0;
+  cout  << endl << "The list after getnodebykey" << endl;
   ll.printall();
   // Question (2)
   if (argc != 3)
@@ -215,13 +216,14 @@ int main(int argc, char *argv[])
   try
   {
     unsigned int key = atoi(argv[1]);
-    unsigned int cargo = atoi(argv[1]);
+    unsigned int cargo = atoi(argv[2]);
     ll.insertafterkey(cargo, key);
   }
   catch(std::runtime_error& e)
   {
     cout << e.what() << "\n";
   }
+  cout  << endl << "The list after insertafterkey" << endl;
   ll.printall();
   return EXIT_SUCCESS;
 }

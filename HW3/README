@@ -18,7 +18,7 @@
 	   but it corrupts the stack of norm. Then, after norm returns, the
 	   memory location of buffer is corrupted and when the code dereferences
 	   buffer[k] you get segmentation violation.
-		the another bug is the matrix index exceed in both matvec and fillmatrices functions
+		the another bug is the matrix and vector index exceed in both matvec and fillmatrices functions
 
 
 
