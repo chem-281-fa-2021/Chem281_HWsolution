@@ -1,0 +1,24 @@
+ first homework:
+ find the bug in linkedlist.cpp
+   answer: the routine does not check for end reaching the end of the list.
+           if the key is not in the linked list the routine will get to the
+	   null pointer. Instead, the routine should give an error if the node
+	   doesn't exist, that is if there is no node in the list with that key.
+ second homework:
+ implement insertafterkey
+			You need to generate a new key, just like insert function
+           again, if the key doesn't exist issue and error (throw/catch?)
+
+ third homework:
+           debug
+	   answer:
+		the buffer array has the wrong dimension, it should be mrows
+	   the next routine, matvec, overwrites the stack pointer of the callee,
+	   (norm). It returns fine because it doesn't overwrite it's own stack
+	   but it corrupts the stack of norm. Then, after norm returns, the
+	   memory location of buffer is corrupted and when the code dereferences
+	   buffer[k] you get segmentation violation.
+		the another bug is the matrix index exceed in both matvec and fillmatrices functions
+
+
+
