@@ -56,27 +56,6 @@ LinkedList::~LinkedList()
   }
 }
 
-void LinkedList::printall()
-{
-  if (head == NULL)
-    return;
-  unsigned int temp_count = count;
-  Node *node = head;
-  while (node)
-  {
-    printf("node %d, the data is %d\n", node->key, node->cargo);
-    node = node->link;
-    temp_count--;
-    if (temp_count == 0)
-      break; // possibly corrupted list
-  }
-  if ((temp_count == 0 && node != NULL) || (node == NULL && temp_count != 0))
-  {
-    const char *errormsg = "Warning: inconsistent list when print list";
-    cout << errormsg << endl;
-  }
-}
-
 unsigned int LinkedList::insert(nodedata cargo)
 {
   unsigned int nodekey = key;
@@ -179,6 +158,29 @@ unsigned int kgen2(const unsigned int k)
   unsigned int n = ((xx % (k + 1)) / k) * (k - 1) + 2;
   return n;
 }
+
+
+void LinkedList::printall()
+{
+  if (head == NULL)
+    return;
+  unsigned int temp_count = count;
+  Node *node = head;
+  while (node)
+  {
+    printf("node %d, the data is %d\n", node->key, node->cargo);
+    node = node->link;
+    temp_count--;
+    if (temp_count == 0)
+      break; // possibly corrupted list
+  }
+  if ((temp_count == 0 && node != NULL) || (node == NULL && temp_count != 0))
+  {
+    const char *errormsg = "Warning: inconsistent list when print list";
+    cout << errormsg << endl;
+  }
+}
+
 
 int main(int argc, char *argv[])
 {

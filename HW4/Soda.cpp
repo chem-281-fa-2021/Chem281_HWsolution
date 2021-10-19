@@ -74,6 +74,7 @@ double Idle::handle(Action *eventData)
     {
     case insert:
         this->context->setState(this->transitionTable[1]);
+        cout << "quarter inserted! Please press the button to get the Soda" << endl;
         break;
     case press:
         cout << "Insert Quarter" << endl;
@@ -149,10 +150,14 @@ double Idle2::handle(Action *eventData)
     switch (*eventData)
     {
     case insert:
-        if(left_sode >0)
+        if(left_sode >0){
             this->context->setState(this->transitionTable[1]);
-        else
+            cout << "quarter inserted! Please press the button to get the Soda" << endl;
+        }
+        else{
             this->context->setState(this->transitionTable[3]);
+            cout << "Overloaded! Please press the button to get the quarter back" << endl;
+        }
         break;
     case press:
         if(left_sode >0)
@@ -194,7 +199,7 @@ double Ready2::handle(Action *eventData)
     {
     case insert:
         this->context->setState(this->transitionTable[3]);
-        cout << "Overloaded" << endl;
+        cout << "Overloaded! Please press the button to get the quarter back" << endl;
         break;
     case press:
         {
